@@ -11,7 +11,7 @@ GO
 
 
 
-CREATE procedure [dbo].[AutoReport]
+AlTER procedure [dbo].[AutoReport]
 @opt as int=1,
 @RptHdrIDs varchar(1000)='1,3,4,5,6,8,9,10,11,12,13'
 as
@@ -24,7 +24,7 @@ begin
 	Select ARH.cAuto_Report_Name,ARH.cAuto_Report_Desc,ARM.cAR_MenuField_Name,ARM.cAR_MenuField_Object_Name,
 	cAR_MenuField_Object_Property,ARSD.cAuto_Report_MenuField_Values,ARM.iMenuField_Action,ARM.iIsMenu_Or_Field, 
 	ARM.iMenu_Level,ARD.iSort_Order,ARH.cExport_FileName, ARC.cAuto_Report_Category, ARH.iAuto_Report_Hdr_Id,
-	ARS.iAuto_Report_Schedule_Id,ARSD.iAuto_Report_Schedule_Dtl_Id
+	ARS.iAuto_Report_Schedule_Id
 	from Auto_Report_Schedule ARS
 	Inner Join Auto_Report_Hdr ARH ON ARH.iAuto_Report_Hdr_Id=ARS.iAuto_Report_Hdr_Id
 	Inner Join Auto_Report_Dtl ARD On ARH.iAuto_Report_Hdr_Id=ARD.iAuto_Report_Hdr_Id
